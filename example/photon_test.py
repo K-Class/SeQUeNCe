@@ -4,7 +4,7 @@ from numpy import sin, cos
 from numpy.random import random_sample, default_rng
 from sequence.components.circuit import Circuit
 from sequence.kernel.quantum_manager import QuantumManagerKet
-from sequence.utils.quantum_state import QuantumState
+from sequence.kernel.quantum_state import FreeQuantumState
 
 
 SAMPLE_SIZE = 10000
@@ -30,7 +30,7 @@ def timeit_wrapper(func):
 
 class ParticleOld:
     def __init__(self, state):
-        self.qs = QuantumState()
+        self.qs = FreeQuantumState()
         self.qs.state = state
 
     def measure(self):
